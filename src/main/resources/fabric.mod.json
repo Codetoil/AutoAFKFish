@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "autoafkfisher",
+  "version": "{mod=(1.0.0.1), mappings=(1.14.4+build.15), loader=(0.7.4+build.177), fabric=(0.4.2+build.246), mc=(1.14.4)}",
+
+  "name": "Auto AFK Fisher",
+  "description": "Toggle Right Click by pressing F12, used to afk in the background",
+  "authors": [
+    "Codetoil"
+  ],
+  "contact": {
+    "homepage": "https://codetoil.github.io/",
+    "sources": ""
+  },
+
+  "license": "GNU-GPL-v3",
+  "icon": "assets/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.codetoil.autoafkfisher.AutoAfkFisher"
+    ]
+  },
+  "mixins": [
+    "mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.0"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

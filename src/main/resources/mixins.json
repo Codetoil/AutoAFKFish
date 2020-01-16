@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "io.github.codetoil.autoafkfisher.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "InputUtilMixin",
+    "ClientPlayerEntityMixin",
+    "MinecraftClientMixin",
+    "CrashReportMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
