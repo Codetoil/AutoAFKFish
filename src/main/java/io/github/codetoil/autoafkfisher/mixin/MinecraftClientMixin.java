@@ -43,7 +43,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At("HEAD"), method = "handleInputEvents")
 	private void handleInputEvents(CallbackInfo info)
 	{
-		if (InputUtil.isKeyPressed(MinecraftClient.getInstance().window.getHandle(), InputUtil.fromName("key.keyboard.f12").getKeyCode()) && lastPressedF12 <= 0) {
+		if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), InputUtil.fromName("key.keyboard.f12").getKeyCode()) && lastPressedF12 <= 0) {
 			System.out.println("Pressed F12");
 			isafkon = !isafkon;
 			lastPressedF12 += 60;
