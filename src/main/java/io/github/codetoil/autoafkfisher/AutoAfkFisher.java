@@ -1,12 +1,20 @@
 package io.github.codetoil.autoafkfisher;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.util.InputUtil;
+
+import java.util.Optional;
 
 public class AutoAfkFisher implements ModInitializer
 {
 	public static boolean isafkon = false;
-	public static int lastPressedF12 = 0;
-	public static final String VERSION = "{mod=(1.0.0.1), mappings=(1.15.2+build.14), loader=(0.7.8+build.186), fabric=(0.4.32+build.292), mc=(1.15.2)}";
+	public static int lastPressedToggleKey = 0;
+	//public static FabricKeyBinding bind;
+    public static KeyBinding bind;
 
 	@Override
 	public void onInitialize()
@@ -15,6 +23,18 @@ public class AutoAfkFisher implements ModInitializer
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		System.out.println("Initializing AutoAFK Fisher!");
+		Optional<ModContainer> container = FabricLoader.getInstance().getModContainer("autoafkfisher");
+		if (container.isPresent())
+		{
+			System.out.println("Initializing AutoAFKFisher v"+container.get().getMetadata().getVersion()+"!");
+		}
+		else
+		{
+			System.out.println("Initializing AutoAFKFisher of unknown version!");
+		}
+		//("AutoAFK Fisher!");
+		bind = KeyBindingHelper.registerKeyBinding(new KeyBinding("autoafkfish:togglefishing", InputUtil.Type.KEYSYM, InputUtil.fromTranslationKey("key.keyboard.f12").getCode(), "key.categories.misc"));
+		//bind = FabricKeyBinding.Builder.create().build();
+		//KeyBindingRegistry.INSTANCE.register(bind);
 	}
 }

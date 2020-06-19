@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "autoafkfisher",
-  "version": "{mod=(1.0.0.1), mappings=(1.15.2+build.14), loader=(0.7.8+build.186), fabric=(0.4.32+build.292), mc=(1.15.2)}",
+  "version": "1.0.1.1-mc1.16.0.rc1-4-l0.8.8.202-api0.12.5.367",
 
   "name": "Auto AFK Fisher",
   "description": "Toggle Right Click by pressing F12, used to afk in the background",
@@ -27,9 +27,12 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.8"
+    "fabricloader": ">=0.8.8"
   },
   "suggests": {
     "flamingo": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
   }
 }

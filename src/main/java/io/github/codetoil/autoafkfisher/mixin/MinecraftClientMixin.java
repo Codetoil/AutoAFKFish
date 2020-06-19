@@ -1,8 +1,6 @@
 package io.github.codetoil.autoafkfisher.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.util.InputUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,14 +16,12 @@ public abstract class MinecraftClientMixin
 
 	@Shadow private int itemUseCooldown;
 
-	@Shadow public ClientPlayerEntity player;
-
 	@Inject(at = @At("HEAD"), method = "tick")
 	private void tick(CallbackInfo info)
 	{
-		lastPressedF12--;
-		if (lastPressedF12 < 0) {
-			lastPressedF12 = 0;
+		lastPressedToggleKey--;
+		if (lastPressedToggleKey < 0) {
+			lastPressedToggleKey = 0;
 		}
 		if (isafkon && this.itemUseCooldown <= 0)
 		{
@@ -43,10 +39,10 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At("HEAD"), method = "handleInputEvents")
 	private void handleInputEvents(CallbackInfo info)
 	{
-		if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), InputUtil.fromName("key.keyboard.f12").getKeyCode()) && lastPressedF12 <= 0) {
-			System.out.println("Pressed F12");
+		if (bind.isPressed() && lastPressedToggleKey <= 0) {
+			System.out.println("Pressed Toggle Key");
 			isafkon = !isafkon;
-			lastPressedF12 += 60;
+			lastPressedToggleKey += 30;
 		}
 	}
 }

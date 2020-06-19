@@ -5,8 +5,6 @@
   "mixins": [
   ],
   "client": [
-    "InputUtilMixin",
-    "ClientPlayerEntityMixin",
     "MinecraftClientMixin",
     "CrashReportMixin"
   ],
