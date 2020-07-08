@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "autoafkfisher",
-  "version": "1.0.1.1-mc1.16.0.rc1-4-l0.8.8.202-api0.12.5.367",
+  "version": "1.0.1+build.3",
 
   "name": "Auto AFK Fisher",
   "description": "Toggle Right Click by pressing F12, used to afk in the background",
@@ -23,11 +23,11 @@
     ]
   },
   "mixins": [
-    "mixins.json"
+    "mixins.autoafkfish.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.8.8"
+    "fabricloader": ">=0.8.9"
   },
   "suggests": {
     "flamingo": "*"
