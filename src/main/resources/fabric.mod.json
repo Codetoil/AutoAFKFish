@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "autoafkfisher",
-  "version": "1.0.1+build.4",
+  "version": "1.0.1+build.5",
 
   "name": "Auto AFK Fisher",
   "description": "Toggle Right Click by pressing F12, used to afk in the background",
@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://codetoil.github.io/",
-    "sources": ""
+    "sources": "https://github.com/Codetoil/AutoAFKFish"
   },
 
   "license": "GNU-GPL-v3",

@@ -40,7 +40,7 @@ public abstract class MinecraftClientMixin
 	private void handleInputEvents(CallbackInfo info)
 	{
 		if (bind.isPressed() && lastPressedToggleKey <= 0) {
-			System.out.println("User has pressed Toggle Key, " + (isafkon ? "disabling" : "enabling") + " afk fishing.");
+			System.out.println("User has pressed the toggle key, " + (isafkon ? "disabling" : "enabling") + " afk fishing.");
 			isafkon = !isafkon;
 			lastPressedToggleKey += 30;
 		}
