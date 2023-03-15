@@ -1,30 +1,25 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/java:17",
-    // "runArgs": ["--gpus", "all"],
-    "features": {
-      "ghcr.io/devcontainers/features/java:1": {
-        "version": "none",
-        "installGradle": true
-      },
-       "ghcr.io/devcontainers/features/desktop-lite:1": {
-         "version": "latest",
-         "password": "password"
-        }
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installGradle": true
     },
-    "settings": {
-      "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current"
-    },
-    "forwardPorts": [6080],
-    "containerEnv": {
-      "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current"
-    },
-    "customizations": {
-      "vscode": {"extensions": [
-              "vscjava.vscode-gradle",
-              "vscjava.vscode-java-pack",
-              "DavidAnson.vscode-markdownlint",
-              "eamodio.gitlens"
-          ]}
-    },
-    "postStartCommand": "sudo ./mesa_install.sh"
-  }
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "password": "password"
+    }
+  },
+  "forwardPorts": [6080],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-gradle",
+        "vscjava.vscode-java-pack",
+        "DavidAnson.vscode-markdownlint",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postStartCommand": "sudo ./mesa_install.sh"
+}
