@@ -13,16 +13,11 @@ public class AutoAfkFisher implements ModInitializer
 {
 	public static boolean isafkon = false;
 	public static int lastPressedToggleKey = 0;
-	//public static FabricKeyBinding bind;
     public static KeyBinding bind;
 
 	@Override
 	public void onInitialize()
 	{
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
 		Optional<ModContainer> container = FabricLoader.getInstance().getModContainer("autoafkfisher");
 		if (container.isPresent())
 		{
@@ -32,9 +27,6 @@ public class AutoAfkFisher implements ModInitializer
 		{
 			System.out.println("Initializing AutoAFKFisher of unknown version!");
 		}
-		//("AutoAFK Fisher!");
 		bind = KeyBindingHelper.registerKeyBinding(new KeyBinding("autoafkfish:togglefishing", InputUtil.Type.KEYSYM, InputUtil.fromTranslationKey("key.keyboard.f12").getCode(), "key.categories.misc"));
-		//bind = FabricKeyBinding.Builder.create().build();
-		//KeyBindingRegistry.INSTANCE.register(bind);
 	}
 }

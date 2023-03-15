@@ -2,7 +2,8 @@ package io.github.codetoil.autoafkfisher.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.gen.Accessor;
+import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -12,10 +13,10 @@ import static io.github.codetoil.autoafkfisher.AutoAfkFisher.*;
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin
 {
-	@Shadow protected abstract void doItemUse();
+	@Invoker("doItemUse") protected abstract void invokeDoItemUse();
 
-	@Shadow private int itemUseCooldown;
-
+    @Accessor("itemUseCooldown") protected abstract int getItemUseCooldown();
+	
 	@Inject(at = @At("HEAD"), method = "tick")
 	private void tick(CallbackInfo info)
 	{
@@ -23,13 +24,12 @@ public abstract class MinecraftClientMixin
 		if (lastPressedToggleKey < 0) {
 			lastPressedToggleKey = 0;
 		}
-		if (isafkon && this.itemUseCooldown <= 0)
+		if (isafkon && this.getItemUseCooldown() <= 0)
 		{
 			try {
-				doItemUse();
+				invokeDoItemUse();
 			} catch (Throwable t)
 			{
-				//t.printStackTrace();
 				isafkon = false;
 			}
 
