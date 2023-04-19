@@ -8,6 +8,7 @@ pluginManagement {
             name = 'TerraformersMC'
             url = 'https://maven.terraformersmc.com/releases'
         }
+        mavenCentral()
         gradlePluginPortal()
     }
 }
