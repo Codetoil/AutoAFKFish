@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "io.codetoil.autoafkfish.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "MinecraftClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
